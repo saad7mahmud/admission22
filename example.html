@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Countdown</title>
+
+    <script src="countDown.min.js"></script>
+    <link href="style.css" media="all" rel="stylesheet" />
+    <style>
+      body {
+        background-image: url(./BG.jpg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mother">
+      <img class="imgme" src="/POS White Logo 150dpi.png" alt="" />
+      <h1 class="hline">Physics Admission Crackers</h1>
+
+      <div class="container5"></div>
+    </div>
+    <script>
+      var cd5 = new Countdown({
+        cont: document.querySelector(".container5"),
+        date: Date.now() + 10800000,
+        outputTranslation: {
+          day: "Days",
+          hour: "Hours",
+          minute: "Minutes",
+          second: "Seconds",
+        },
+        endCallback: function () {
+          document
+            .querySelector(".container5")
+            .insertAdjacentHTML(
+              "beforeend",
+              '<div style="display: flex;height: 50px;align-items: center;justify-content: center;background: red;font-weight: bold;">Countdown 3 ended.</div>'
+            );
+        },
+        outputFormat: "hour|minute|second",
+      });
+      cd5.start();
+    </script>
+  </body>
+</html>
